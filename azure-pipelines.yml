@@ -19,7 +19,7 @@ stages:
     displayName: Build  
     pool:
       vmImage: ubuntu-latest 
-    steps:
+    steps:     
     - task: Docker@2
       inputs:
         containerRegistry: 'Docker registery service'
