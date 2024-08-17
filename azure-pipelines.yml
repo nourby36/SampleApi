@@ -1,3 +1,7 @@
+# Docker
+# Build a Docker image
+# https://docs.microsoft.com/azure/devops/pipelines/languages/docker
+
 trigger:
 - master
 
@@ -14,14 +18,13 @@ stages:
   - job: Build    
     displayName: Build  
     pool:
-      name: my-personal-computer # Replace with your self-hosted agent pool name
-    steps:             
+      vmImage: ubuntu-latest 
+    steps:
     - task: Docker@2
       inputs:
-        containerRegistry: 'Docker Registry Service'
-        repository: 'nourbenyahia36'
+        containerRegistry: 'Docker registery service'
+        repository: 'nourbenyahia36/sampleapi'
         command: 'buildAndPush'
-        Dockerfile: 'Dockerfile'
+        Dockerfile: '**/Dockerfile'
         tags: |
           $(tag)
-          
