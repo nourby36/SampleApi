@@ -22,7 +22,7 @@ stages:
     steps:
     - task: Docker@2
       inputs:
-        containerRegistry: 'Docker registery service'
+        containerRegistry: 'Docker registry service'
         repository: 'nourbenyahia36/sampleapi'
         command: 'buildAndPush'
         Dockerfile: '**/Dockerfile'
